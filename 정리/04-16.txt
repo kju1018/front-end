@@ -1,0 +1,7 @@
+
+비동기 통신
+    -REST 는 규격
+    -RESTful은 REST라는 규격을 따르는것
+
+-REST
+    HTTP요청방식 + URL조합으로 서버가 알아차리는것

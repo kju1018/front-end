@@ -1,0 +1,46 @@
+
+<div id="exam11Card" class="card">
+    <div class="card-header">
+      exam13_two_way_binding
+    </div>
+    <div class="card-body">
+      <div class="form-group">
+        <label for="firstItem">Set First Item</label>
+        <input id="firstItem" class="form-control" ng-model="todos[0].action"/>
+      </div>
+      <div class="alert alert-primary mt-2">
+        The first item is: {{todos[0].action}}
+      </div>
+      </hr>
+      <div>
+        <input type="radio" value="개발자" ng-model="job"/> 개발자
+        <input type="radio" value="디자이너" ng-model="job"/> 디자이너
+      </div>
+      <div class="alert alert-primary mt-2">
+        The Job is: {{job}}
+      </div>
+      </hr>
+      <div class="d-flex alert alert-info justify-content-between">
+        <div >완료된 일: <span class="badge badge-danger">{{(todos | filter:{complete:true}).length}}</span>개</div>
+        <div>완료되지 않은 일: <span class="badge badge-warning">{{(todos | filter:{complete:false}).length}}</span>개</div>
+      </div>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>할 일</th>
+              <th>완료</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in todos">
+              <td>{{$index+1}}</td>
+              <td>{{item.action}}</td>
+              <td><input type="checkbox" ng-model="item.complete"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div> 

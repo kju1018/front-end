@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-header">
+      exam08_rootScope_nestedcontroller.html
+    </div>
+    <div class="card-body">
+      <div class="mb-3">
+          <h6 class="alert alert-success">$rootScope의 상태 데이터 및 함수를 사용</h6>
+          <div>로그인ID : {{rootUid}}</div>
+          <div>인사말: {{rootGetGreet()}}</div>
+      </div>
+
+      <div class="mb-3">
+        <h6 class="alert alert-success">중첩된 상위 컨트롤러의 상태 데이터 및 함수를 사용</h6>
+        <div>로그인ID : {{mainUid}}</div>
+        <div>인사말: {{mainGetGreet()}}</div>
+      </div>
+
+      <div class="mb-3">
+        <h6 class="alert alert-success">로그인</h6>
+        <div>ID : <input class="form-control" type="text" ng-model="user.uid"></div>
+        <div>PW : <input class="form-control" type="password" ng-model="user.upassword"></div>
+        <button class="btn btn-primary btn-sm mt-3" ng-click="login(user)">로그인</button>
+      </div>
+    </div>
+</div> 

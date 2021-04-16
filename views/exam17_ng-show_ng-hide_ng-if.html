@@ -1,0 +1,26 @@
+
+<div class="card">
+    <div class="card-header">
+        exam17_ng-show_ng-hide_ng-if
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Action</th>
+            <th>Done</th>
+          </tr>
+        </thead>
+        <tr ng-repeat="item in todos">
+          <td>{{$index + 1}}</td>
+          <td>{{item.action}}</td>
+          <td>
+            <span ng-show="item.complete">미완료</span>
+            <!-- <span ng-hide="item.complete">미완료</span> -->
+            <!-- <span ng-if="!item.complete">미완료</span> -->
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>

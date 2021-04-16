@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="card-header">
+      exam20_boolean_href_src
+      
+    </div>
+    <div class="card-body">
+      <div class="alert alert-success">
+        <input type="checkbox" ng-model="checked"> 활성화
+      </div>
+        <p><button class="btn btn-danger btn-sm" ng-disabled="!checked">버튼</button></p>
+        <p><input type="checkbox" ng-checked="checked"></p>
+        <p><input type="text" ng-readonly="!checked"></p>
+        <div ng-show="checked">
+          <a class="btn btn-danger btn-sm" href="{{pageUrl}}">exam19 으로 이동</a>
+          <!-- 이건 데이터가 바인딩되기전에 클릭가능 -->
+          <a class="btn btn-danger btn-sm" ng-href="{{pageUrl}}">exam19 으로 이동</a>
+        </div>
+        <div class="mt-3" ng-hide="!checked">
+          <img src="{{imgUrl}}" width="150" class="mr-2">
+          <img ng-src="{{imgUrl}}" width="150">
+        </div> 
+    </div>
+</div>

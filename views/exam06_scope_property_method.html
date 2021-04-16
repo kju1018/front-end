@@ -1,0 +1,18 @@
+<div class="card">
+    <div class="card-header">
+        exam06_scope_property_method.html        
+    </div>
+    <div class="card-body">
+        <div class="form-group">
+            <label>도시 선택</label>
+            <select class="form-control"
+                    ng-options="city for city in cities"
+                    ng-model="city"
+                    style="width:200px"></select>
+        </div>
+        <div>
+            <p>선택한 도시: {{city}}</p>
+            <p>도시의 나라: {{getCountry()}}</p>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,46 @@
+<div class="card">
+    <div class="card-header">
+        exam07_scope_implicit_property.html
+        <span class="badge badge-info m1-2">{{(todos | filter : {complete:false}).length}}</span>
+        <!-- 필터링을 거친 todos의 개수 -->
+    </div>
+    <div class="card-body row">
+        <div class="col-sm-6">
+            <div class="card card-body">
+              <div class="form-group">
+                <label for="actionText">Action:</label>
+                <input id="actionText" type="text" class="form-control" ng-model="newTodo.action"/>
+              </div>
+              <div class="form-group">
+                <label for="actionLocation">Location:</label>
+                <select id="actionLocation" ng-model="newTodo.location">
+                    <option value="Home">Home</option>
+                    <option value="Office">Office</option>
+                </select>
+              </div>
+              <button class="btn btn-primary btn-sm mb-2" ng-click="addNewItem(newTodo)">추가</button>
+              <button class="btn btn-primary btn-sm" ng-click="addNewItem2()">추가2</button>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Action</th>
+                  <th>Done</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="item in todos">
+                    <th>{{$index+1}}</th>
+                    <th>{{item.action}}</th>
+                    <th>{{item.complete}}</th>
+                    <th><input type="checkbox" ng-model="item.complete"/></th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+    </div>
+</div> 

@@ -1,0 +1,123 @@
+<div class="card">
+    <div class="card-header">
+        exam22_filter
+    </div>
+    <div class="card-body">
+        <div>
+            <div class="alert alert-primary">개수 제한
+                <select ng-model="limitVal">
+                    <option ng-repeat="limit in limitRange">{{limit}}</option>
+                </select>
+            </div>
+
+            <table class="tabel table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>이름</th>
+                        <th>분류</th>
+                        <th>가격</th>
+                        <th>유효기간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in products | limitTo:limitVal">
+                        <!-- | 는 필터기능 -->
+                        <td>{{product.pno}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.category}}</td>
+                        <td>₩{{product.price | number:0}}</td>
+                        <td>{{getExpiryDate(product.expiry) | date:"yyyy.MM.dd"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <div class="alert alert-primary">
+                속성 필터링
+                <select ng-model="categoryVal">
+                    <option ng-repeat="category in categoryList">{{category}}</option>
+                </select>
+            </div>
+
+            <table class="tabel table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>이름</th>
+                        <th>분류</th>
+                        <th>가격</th>
+                        <th>유효기간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in products | filter:{category:getCategoryVal()}">
+                        <!-- | 는 필터기능 -->
+                        <td>{{product.pno}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.category}}</td>
+                        <td>₩{{product.price | number:0}}</td>
+                        <td>{{getExpiryDate(product.expiry) | date:"yyyy.MM.dd"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <div class="alert alert-primary">
+                복잡한 조건으로 필터링
+            </div>
+
+            <table class="tabel table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>이름</th>
+                        <th>분류</th>
+                        <th>가격</th>
+                        <th>유효기간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in products | filter: checkFiltering">
+                        <!-- checkFiltering는 checkFiltering(product) 같음 -->
+                        <td>{{product.pno}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.category}}</td>
+                        <td>₩{{product.price | number:0}}</td>
+                        <td>{{getExpiryDate(product.expiry) | date:"yyyy.MM.dd"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <div class="alert alert-primary">
+                정렬
+            </div>
+            <table class="tabel table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>번호</th>
+                        <th>이름</th>
+                        <th>분류</th>
+                        <th>가격</th>
+                        <th>유효기간</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr ng-repeat="product in products | orderBy:'-price'"> -->
+                    <tr ng-repeat="product in products | orderBy:['category', '-price']">
+
+                        <td>{{product.pno}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.category}}</td>
+                        <td>₩{{product.price | number:0}}</td>
+                        <td>{{getExpiryDate(product.expiry) | date:"yyyy.MM.dd"}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

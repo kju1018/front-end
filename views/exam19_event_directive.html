@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header">
+      exam19_event_directive
+    </div>
+    <div class="card-body">
+        <div class="alert alert-primary">
+          <button class="btn btn-info mr-3" ng-click="handleBtnClick($event)">사진 변경</button>
+          <img id="img1" height="150" src="resources/img/{{imageName}}"/>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Action</th>
+              <th>Complete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in todos"
+              ng-mouseenter="handleMouseEvent($event)"
+              ng-mouseleave="handleMouseEvent($event)">
+              <td>{{$index + 1}}</td>
+              <td>{{item.action}}</td>
+              <td>{{item.complete}}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>

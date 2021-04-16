@@ -1,0 +1,33 @@
+<style>
+  .custom-class{
+    background-color: orange;
+  }
+</style>
+<div class="card">
+    <div class="card-header">
+      exam18_ng-class_ng-style
+    </div>
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Action</th>
+            <th>Complete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr ng-repeat="item in todos" ng-class-odd="'custom-class'"> -->
+          <!-- <tr ng-repeat="item in todos" ng-class-odd="customClass"> -->
+          <tr ng-repeat="item in todos" ng-class-odd="{'custom-class' : status === true }">
+            <!-- 다른 클래스를 더 쓰고 싶을때 "{'custom-class' : status === false, 'custom-class2' : status === false}" 콤마로 추가 -->
+            <!-- "customClass" 이건 작음 따옴표가 없음 즉 상태데이터 -->
+            <td>{{$index + 1}}</td>
+            <td>{{item.action}}</td>
+            <td ng-style="{'color': customColor}">{{item.complete}}</td>
+            <!-- customColor은 ''가 없기때문에 상태데이터 -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>

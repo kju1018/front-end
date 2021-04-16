@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+    
+    <!--<base href="/"/> -->
+    <!-- 루트가 어딘지 -->
+    <!-- front-end를 /로 보겠다 앵귤러 앱의 위치-->
+<!-- source가 가장 상위이고 밑에 front-end가 있을때   <base href="/front-end/"/> 로 지정해야함-->
+    
+    <script src="app.js"></script>
+    <script src="appRoute.js"></script>
+
+    <script src="modules/exam03Module.js"></script>
+    <script src="modules/exam04Module.js"></script>
+    <script src="controllers/exam05Controller.js"></script>
+    <script src="controllers/exam06Controller.js"></script>
+    <script src="controllers/exam07Controller.js"></script>
+    <script src="controllers/exam08Controller.js"></script>
+    <script src="controllers/exam09Controller.js"></script>
+    <script src="controllers/exam10Controller.js"></script>
+    <script src="controllers/exam11Controller.js"></script>
+    <script src="controllers/exam12Controller.js"></script>
+    <script src="controllers/exam13Controller.js"></script>
+    <script src="controllers/exam14Controller.js"></script>
+    <script src="controllers/exam15Controller.js"></script>
+    <script src="controllers/exam16Controller.js"></script>
+    <script src="controllers/exam17Controller.js"></script>
+    <script src="controllers/exam18Controller.js"></script>
+    <script src="controllers/exam19Controller.js"></script>
+    <script src="controllers/exam20Controller.js"></script>
+    <script src="controllers/exam21Controller.js"></script>
+    <script src="controllers/exam22Controller.js"></script>
+    <script src="controllers/exam23Controller.js"></script>
+    <script src="controllers/exam24Controller.js"></script>
+
+
+    <script src="services/exam23Service.js"></script>
+    
+</head>
+<!-- <body ng-app="app">-->
+<!-- ng태그를 body에도 사용 가능 -->
+<body ng-controller="mainController">
+    <div class="d-flex flex-column vh-100">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark text-white font-weight-bold justify-content-between">
+            <a class="navbar-brand" href="./">
+            <img src="./resources/img/angular.png" width="30" height="30" class="d-inline-block align-top">
+            AngularJS
+            </a>
+            <div>
+                <div ng-show="!uid">
+                    <a class="btn btn-success btn-sm" href="/#!/exam08_rootScope_nestedcontroller">로그인</a>
+                </div>
+                <div ng-show="uid">
+                    ID: {{uid}}<button class="btn btn-success btn-sm ml-2" ng-click="logout()">로그아웃</button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="flex-grow-1 container-fluid">
+            <div class="row h-100">
+            <div class="col-md-6 col-lg-4 p-3 bg-dark">
+                <div class="h-100 d-flex flex-column">
+                <div class="flex-grow-1" style="height:0px; overflow-y: auto; overflow-x: hidden;">
+                    <ng-include src="'appMenu.html'"></ng-include>
+                    <!-- ng가 들어가면 코드가 들어가야함 다양한 연산식도 가능-->
+                </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-8 p-3">
+                <div class=" h-100 d-flex flex-column">
+                <div class="flex-grow-1 overflow-auto pr-3" style="height:0px">
+                    <ng-view/>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
