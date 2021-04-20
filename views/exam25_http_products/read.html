@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="card-header">
+        read.html
+    </div>
+    <div class="card-body">
+        <div>
+            <div class="form-group">
+                <label>상품명:</label>
+                <input class="form-control" ng-value="product.name" readonly/>
+            </div>
+            <div class="form-group">
+                <label>가격:</label>
+                <input class="form-control" ng-value="product.price" readonly>
+            </div>
+            <div class="form-group">
+                <label>카테고리:</label>
+                <input class="form-control" ng-value="product.category" readonly>
+            </div>
+            <div class="form-group">
+                <label>내용:</label>
+                <textarea class="form-control" ng-value="product.description" readonly></textarea>
+            </div>
+
+            <button class="btn btn-primary btn-sm" ng-click="getList(pager.pageNo)">목록</button>
+            <button class="btn btn-primary btn-sm" ng-click="updateProductForm()">수정</button> 
+            <button class="btn btn-primary btn-sm" ng-click="deleteProduct(product.pid)">삭제</button>       
+        </div>
+    </div>
+</div>
+

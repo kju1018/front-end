@@ -40,7 +40,15 @@ angular.module("app")
             .when("/exam24_builtin_service", {templateUrl: "views/exam24_builtin_service/index.html", controller:"exam24Controller"})
             .when("/exam24_builtin_service/boards", {templateUrl: "views/exam24_builtin_service/boards.html", controller:"exam24Controller"})
             .when("/exam24_builtin_service/boards/:bno", {templateUrl: "views/exam24_builtin_service/boards.html", controller:"exam24Controller"})
-            //:bno는 경로변수
+            //:bno는 경로변수(PathVariable)
+
+            .when("/exam25_http_products", {templateUrl: "views/exam25_http_products/index.html", controller:"exam25Controller"})
+
+            .when("/exam26_http_boards", {templateUrl: "views/exam26_http_boards/index.html", controller:"exam26Controller"})
+
+            .when("/exam27_http_auth", {templateUrl: "views/exam27_http_auth/login.html", controller:"exam27Controller"})
+            
+            
             .otherwise({redirectTo: "/exam01_home"});
             // 컨트롤러 객체들은 다 다름 exam24Controller가 2개여도 각각 다른 객체  같이 사용하고싶으면 rootScope나 mainController에서 사용
     });
